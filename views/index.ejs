@@ -10,15 +10,15 @@
 </head>
 <body>
   <div class="container my-4">
-    <h1>WDS Video Suggestions</h1>
+    <h1>잇그린 배달현황</h1>
     <form action="/create-suggestion" method="POST" class="border-bottom">
       <div class="row">
         <div class="col-12 col-md mb-3">
-          <label for="title">Title</label>
+          <label for="title">제목</label>
           <input type="text" name="title" id="title" required class="form-control">
         </div>
         <div class="col-12 col-md mb-3">
-          <label for="tagIds">Tags</label>
+          <label for="tagIds">현황</label>
           <select name="tagIds" id="tagIds" class="form-select" multiple>
             <% tags.forEach(tag => { %>
               <option value="<%= tag.id %>"><%= tag.name %></option>
@@ -27,14 +27,14 @@
         </div>
       </div>
       <div class="mb-3">
-        <label for="description">Description</label>
+        <label for="description">위치</label>
         <textarea name="description" id="description" class="form-control" required maxlength="500"></textarea>
       </div>
       <div class="form-check mb-3">
         <input type="checkbox" name="isProject" id="isProject" class="form-check-input">
-        <label for="isProject" class="form-check-label">Project</label>
+        <label for="isProject" class="form-check-label">오토바이</label>
       </div>
-      <button type="submit" class="btn btn-primary mb-3">Create New Suggestion</button>
+      <button type="submit" class="btn btn-primary mb-3">현황 보고하기</button>
     </form>
     <div class="row g-3 mt-3">
       <% suggestions.forEach(suggestion => { %>
@@ -50,7 +50,7 @@
             <div class="card-body">
               <p><%= suggestion.description %></p>
               <% if (suggestion.isProject) { %>
-                <div class="badge bg-primary rounded-pill">Project</div>
+                <div class="badge bg-primary rounded-pill">오토바이</div>
               <% } %>
               <% suggestion.tags.forEach(tag => { %>
                 <div class="badge bg-secondary rounded-pill">
